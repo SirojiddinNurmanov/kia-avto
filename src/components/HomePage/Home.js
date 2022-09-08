@@ -69,7 +69,7 @@ const Home = () => {
                     <h3>Mashinalar</h3>
                   </div>
                   <button onClick={() => setShow(false)}>
-                    <img src="/img/icons/close.png" alt="close" />
+                    <img src="img/icons/close.png" alt="close" />
                   </button>
                 </div>
                 <div className="modal-content-2">
@@ -258,7 +258,7 @@ const Home = () => {
                           <td>{item.color}</td>
                           <td>{item.distance}</td>
                           <th>
-                            <img src="/img/icons/right-arrow.png" />
+                            <img src="img/icons/right-arrow.png" />
                           </th>
                         </tr>
                       );

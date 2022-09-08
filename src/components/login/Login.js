@@ -58,7 +58,7 @@ const Login = () => {
   async function sendLogin() {
     const request = postReaquest(url, body);
     console.log(request);
-    navigate("/");
+    navigate(/");
   }
   return (
     <main>

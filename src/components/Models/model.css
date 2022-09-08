@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+.models{
+    padding: 100px 40px     ;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    flex-direction: column;
+}
+.automobiles{
+    display: flex;
+}
+.automobile{
+    padding: 5px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.automobile img{
+    width: 100%;
+}
+.automobile span{
+    font-size: 30px;
+}

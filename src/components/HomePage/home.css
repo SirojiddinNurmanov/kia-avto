@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+.wrap{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.main-content{
+    display: flex;
+
+}
+.home-page{
+    background-color: #e3e3e3;
+    padding-top: 20px;
+    padding-left: 20px;
+    width: 80%;
+    height: 85vh;
+    padding-right: 20px;
+}
+.auto-container{
+    background-color: #fff;
+    padding-left: 20px;
+}
+.auto-header{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.auto-lay{
+    display: flex;
+    align-items: center;
+}
+.auto-header h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.auto-header .auto-column{
+    background: #FFD88D;
+    width: 16px;
+    height: 24px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.modal-header .auto-column-2{
+    background: #CABDFF;;
+    width: 16px;
+    height: 24px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.auto-btn{
+    background: #2A85FF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+/*Modal*/
+.modal-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff .2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header .auto-lay h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-header button img{
+    width: 12px;
+}
+.modal-header button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content-2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.modal-right, .modal-left{
+    width: 48%;
+}
+.modal-content-2 .modal-element{
+ display: flex;
+ gap: 5px;
+ margin-bottom: 10px;
+ justify-content: start;
+ flex-direction: column;
+}
+.modal-content-2 .modal-element label{
+    font-size: 12px;
+    font-weight: 600;
+}
+.modal-content-2 .modal-element .modal-input{
+    border: none;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    width: 100%;
+    border-color: #FFD88D;
+}
+.modal-btn{
+    width: 100%;
+    border-top: 1px solid #efefef;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+}

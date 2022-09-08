@@ -21,7 +21,7 @@ const Register = () => {
 
   async function createEmployee() {
     postReaquest(url, body, _Authorization).then((data) => console.log(data));
-    navigate(/login");
+    navigate("/login");
   }
 
   return (

@@ -26,7 +26,7 @@ const Navbar = () => {
               <div className="profile-auth">
                 <span
                   onClick={() => {
-                    navigate(/register");
+                    navigate("/register");
                   }}
                   className="p-register"
                 >
@@ -34,7 +34,7 @@ const Navbar = () => {
                 </span>
                 <span
                   onClick={() => {
-                    navigate(/login");
+                    navigate("/login");
                   }}
                   className="p-login"
                 >

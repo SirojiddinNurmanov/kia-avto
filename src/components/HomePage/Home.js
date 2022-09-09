@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { postReaquest, getReaquest, _Authorization } from "../utils/fetchData";
 import { getData } from "../store/auth/auth-action";
 import { selectData } from "../store/auth/auth-selector";
+import { useNavigate } from "react-router-dom";
 
 import "./home.css";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getReaquest("https://cartestwebapp.herokuapp.com/car?limit=5&page=1").then(
@@ -22,6 +24,21 @@ const Home = () => {
   const data = useSelector(selectData);
   console.log(data);
 
+  const dataNumber = data && data.total;
+  console.log(dataNumber, "xx");
+  const totalArr = [];
+  for (let i = 5; i <= dataNumber; i = i + 5) {
+    if (dataNumber % 5 === 0) {
+      totalArr.push(i / 5);
+    } else {
+      totalArr.push((i + 5) / 5);
+    }
+  }
+
+  console.log(totalArr);
+
+  const [page, setPage] = useState(1);
+  const [num, setNum] = useState(page);
   const [show, setShow] = useState(false);
   const [marka, setMarka] = useState("");
   const [motor, setMotor] = useState("");
@@ -35,6 +52,16 @@ const Home = () => {
   const [image, setImage] = useState("");
   const [desc, setDesc] = useState("");
   const [imageoutside, setImageoutside] = useState("");
+
+  useEffect(() => {
+    getReaquest(
+      `https://cartestwebapp.herokuapp.com/car?limit=5&page=${page}`
+    ).then((data) => {
+      dispatch(getData(data));
+    });
+    setNum(page);
+  }, [page]);
+
   const body = {
     imgUrl: "img-a64a93be58b928fddea2eb88cf3b23aa.jpg",
     imgUrlInside: "img-db607b3fdb99095051f37c849887ace7.jpg",
@@ -222,7 +249,7 @@ const Home = () => {
             <div className="auto-header">
               <div className="auto-lay">
                 <div className="auto-column"></div>
-                <h3>Mashinalar</h3>
+                <h3 onClick={() => navigate("/Modellar")}>Mashinalar</h3>
               </div>
               <button onClick={() => setShow(!show)} className="auto-btn">
                 {" "}
@@ -246,10 +273,10 @@ const Home = () => {
                 </thead>
                 <tbody className="t-body">
                   {data &&
-                    data.data.map((item) => {
+                    data.data.map((item, n) => {
                       return (
                         <tr key={item._id}>
-                          <td>{1}</td>
+                          <td>{(page - 1) * 5 + 1 + n}</td>
                           <td>{item.marka.name}</td>
                           <td>{item.gearbok}</td>
                           <td>{item.tonirovka}</td>
@@ -266,7 +293,39 @@ const Home = () => {
                 </tbody>
               </table>
             </div>
-            <div className="pagination"></div>
+            <div className="pagination">
+              <img
+                onClick={() => {
+                  page > 1 ? setPage(page - 1) : setPage(page);
+                }}
+                className="pagination-arrow"
+                src="img/icons/arrow.png"
+                alt="pag"
+              />
+              {totalArr.map((item) => (
+                <div
+                  onClick={() => {
+                    setPage(item);
+                  }}
+                  key={item}
+                  className={
+                    page === item
+                      ? "pagination-arrow active"
+                      : "pagination-arrow"
+                  }
+                >
+                  {item}
+                </div>
+              ))}
+              <img
+                className="pagination-arrow"
+                src="img/icons/right-arrow.png"
+                alt="pag"
+                onClick={() => {
+                  page < totalArr.at(-1) ? setPage(page + 1) : setPage(page);
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

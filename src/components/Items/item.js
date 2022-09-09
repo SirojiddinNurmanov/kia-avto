@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./item.css";
 
 export const Item = () => {
+  const [value, setValue] = useState("outside");
   return (
     <div className="item-container">
       <h1>Modellari</h1>
@@ -13,7 +14,7 @@ export const Item = () => {
               <h4>Chevrolet Malibu</h4>
             </li>
             <li>
-              <img src=".img/models/chevrolet.png"></img>
+              <img src="/img/models/chevrolet/malib.png"></img>
             </li>
             <li>
               <span>
@@ -23,39 +24,48 @@ export const Item = () => {
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Tonirovkasi:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>Yoq</span>
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Motor:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>1.6</span>
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Year:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>2016</span>
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Rangi:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>Oq</span>
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Distance:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>3000 km</span>
             </li>
             <li>
               <span>
-                <b>Markasi:</b>
+                <b>Gearbok:</b>
               </span>{" "}
-              <span>Chevrolet</span>
+              <span>Avtomat Karobka</span>
+            </li>
+            <li>
+              <span>
+                <b>Description:</b>
+              </span>{" "}
+              <span>
+                Deseription: Mishina ideal holatda krasska top toza 100tali.
+                Ayol kishiniki judayam akuratno haydalgan.{" "}
+              </span>
             </li>
           </ul>
           <div className="desc-footer">
@@ -68,16 +78,18 @@ export const Item = () => {
           <div className="image-header">
             <h3>Chevrolet</h3>
             <div className="image-header-right">
-              <img src="img/icons/archa.png" alt="archa"></img>
-              <img src="img/icons/vector.png" alt="archa"></img>
+              <img src="/img/icons/archa.png" alt="archa"></img>
+              <img src="/img/icons/vector.png" alt="archa"></img>
             </div>
           </div>
           <div className="image-content">
-            {true ? (
+            {value === "outside" ? (
               <div className="outside">
                 <div className="outside-images">
-                  <img src="img/outside/outside.png" alt="out" />
-                  <img src="img/icons/360.png" alt="360" />
+                  <img src="/img/outside/outside.png" alt="out" />
+                </div>
+                <div className="s360">
+                  <img src="/img/icons/360.png" alt="360" />
                 </div>
                 <span className="out-text">
                   Tasvir tanlangan konfiguratsiyaga mos kelmasligi mumkin.
@@ -88,8 +100,10 @@ export const Item = () => {
             ) : (
               <div className="inside">
                 <div className="inside-images">
-                  <img src="img/inside/inside.png" alt="out" />
-                  <img src="img/icons/360.png" alt="360" />
+                  <img src="/img/inside/inside.png" alt="out" />
+                </div>
+                <div className="s360">
+                  <img src="/img/icons/360.png" alt="360" />
                 </div>
                 <span className="out-text">
                   Tasvir tanlangan konfiguratsiyaga mos kelmasligi mumkin.
@@ -101,12 +115,31 @@ export const Item = () => {
           </div>
           <div className="image-radio">
             <div>
-              <input type="radio" id="huey" name="drone" value="huey" checked />
+              <input
+                type="radio"
+                id="huey"
+                name="drone"
+                value="huey"
+                selected
+                onClick={() => {
+                  setValue("outside");
+                  console.log(value);
+                }}
+              />
               <label htmlFor="huey">Tashqi</label>
             </div>
 
             <div>
-              <input type="radio" id="dewey" name="drone" value="dewey" />
+              <input
+                type="radio"
+                id="dewey"
+                name="drone"
+                value="dewey"
+                onClick={() => {
+                  setValue("inside");
+                  console.log(value);
+                }}
+              />
               <label htmlFor="dewey">Ichki</label>
             </div>
           </div>

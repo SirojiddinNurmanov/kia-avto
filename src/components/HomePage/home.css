@@ -37,6 +37,7 @@
 .auto-header h3{
     font-size: 25px;
     font-weight: 600;
+    cursor: pointer;
 }
 .auto-header .auto-column{
     background: #FFD88D;
@@ -67,7 +68,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fff .2;
+    background: rgba(118, 119, 118, 0.4) ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,4 +137,42 @@
     justify-content: flex-end;
     align-items: center;
     padding: 15px;
+}
+
+table tr th {
+    padding: 10px 0;
+   
+}
+table{
+    width: 100%;
+    justify-content: flex-start;
+}
+.pagination{
+    margin: 15px auto;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.pagination-arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FCFCFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.pagination-arrow.active{
+    border: 2px solid rgb(177, 171, 171);
+}
+
+.paths{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
 }

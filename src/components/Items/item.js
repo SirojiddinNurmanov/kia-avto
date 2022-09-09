@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import data from "../data.json";
 
 import "./item.css";
 
@@ -14,7 +15,7 @@ export const Item = () => {
               <h4>Chevrolet Malibu</h4>
             </li>
             <li>
-              <img src="/img/models/chevrolet/malib.png"></img>
+              <img src={data.item.malib} alt="heh"></img>
             </li>
             <li>
               <span>
@@ -78,18 +79,18 @@ export const Item = () => {
           <div className="image-header">
             <h3>Chevrolet</h3>
             <div className="image-header-right">
-              <img src="/img/icons/archa.png" alt="archa"></img>
-              <img src="/img/icons/vector.png" alt="archa"></img>
+              <img src={data.item.archa} alt="archa"></img>
+              <img src={data.item.vektor} alt="archa"></img>
             </div>
           </div>
           <div className="image-content">
             {value === "outside" ? (
               <div className="outside">
                 <div className="outside-images">
-                  <img src="/img/outside/outside.png" alt="out" />
+                  <img src={data.item.outside} alt="out" />
                 </div>
                 <div className="s360">
-                  <img src="/img/icons/360.png" alt="360" />
+                  <img src={data.item.sev} alt="360" />
                 </div>
                 <span className="out-text">
                   Tasvir tanlangan konfiguratsiyaga mos kelmasligi mumkin.
@@ -100,10 +101,10 @@ export const Item = () => {
             ) : (
               <div className="inside">
                 <div className="inside-images">
-                  <img src="/img/inside/inside.png" alt="out" />
+                  <img src={data.item.inside} alt="out" />
                 </div>
                 <div className="s360">
-                  <img src="/img/icons/360.png" alt="360" />
+                  <img src={data.item.sev} alt="360" />
                 </div>
                 <span className="out-text">
                   Tasvir tanlangan konfiguratsiyaga mos kelmasligi mumkin.

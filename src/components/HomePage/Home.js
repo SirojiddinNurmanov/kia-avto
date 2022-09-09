@@ -27,9 +27,9 @@ const Home = () => {
   const dataNumber = data && data.total;
   console.log(dataNumber, "xx");
   const totalArr = [];
-  for (let i = 5; i <= dataNumber; i = i + 5) {
+  for (let i = 0; i <= dataNumber; i = i + 5) {
     if (dataNumber % 5 === 0) {
-      totalArr.push(i / 5);
+      totalArr.push((i + 5) / 5);
     } else {
       totalArr.push((i + 5) / 5);
     }

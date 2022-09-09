@@ -1,0 +1,17 @@
+{
+    "modalItem":{
+        "malibu": "/img/models/chevrolet/malibu.png",
+        "tahoe": "img/models/chevrolet/tahoe.png",
+        "nexia": "img/models/chevrolet/nexia.png",
+        "damas": "img/models/chevrolet/damas.png",
+        "path": "img/icons/path.png"
+    },
+    "item":{
+        "malib": "img/models/chevrolet/malib.png",
+        "archa": "img/icons/archa.png", 
+        "vektor": "img/icons/vektor.png",
+        "outside": "img/outside/outside.png",
+        "inside": "img/inside/inside.png",
+        "sev": "img/icons/360.png"
+    }
+}
